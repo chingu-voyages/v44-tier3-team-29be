@@ -1,0 +1,5 @@
+singleQuote: true
+bracketSpacing: true
+semi: false
+tabWidth: 2
+trailingComma: 'none'
