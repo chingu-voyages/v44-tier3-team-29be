@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "esModuleInterop": true,
-    "target": "es5",
     "strict": true,
-    "noImplicitAny": true,
-    "allowJs": true,
+    "target": "ES6",
+    "module": "CommonJS",
     "moduleResolution": "node",
-    "sourceMap": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowJs": false,
+    "checkJs": false,
     "isolatedModules": true,
-    "outDir": "dist",
+    "sourceMap": true,
+    "exactOptionalPropertyTypes": true,
     "baseUrl": ".",
+    "outDir": "dist",
     "paths": {
-      "@/*": ["./src/types/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*.ts"]
 }

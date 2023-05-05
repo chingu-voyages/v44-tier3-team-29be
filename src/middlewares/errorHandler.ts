@@ -21,5 +21,7 @@ export const errorNotFoundHandler = (
   res: Response,
   next: NextFunction
 ): void => {
-  res.status(404).send({ error: { title: '', message: '' } })
+  res
+    .status(404)
+    .send({ error: { title: 'Page Not Found', message: 'Page Not Found' } })
 }
