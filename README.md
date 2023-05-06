@@ -88,9 +88,9 @@ Database:
 <!-- DEVELOPERS -->
 ### Developers
 
-| [Anna](https://github.com/ha-anna) | [Devim](https://github.com/devimalka) | [Horus](https://github.com/horus2121) | [Lei]()  |
+| [Anna](https://github.com/ha-anna) | [Devim](https://github.com/devimalka) | [Horus](https://github.com/horus2121) | [Lei](https://github.com/leixdd)  |
 |------|-------|-------|------|
-| <img src="https://avatars.githubusercontent.com/u/83631167?v=4" width="50px" border-radius="50%" /> | <img src="https://avatars.githubusercontent.com/u/67840180?v=4" width="50px" border-radius="50%" />  | <img src="https://avatars.githubusercontent.com/u/94784559?v=4" width="50px" border-radius="50%" />  | <img src="" width="50px" border-radius="50%" /> |
+| <img src="https://avatars.githubusercontent.com/u/83631167?v=4" width="50px" border-radius="50%" /> | <img src="https://avatars.githubusercontent.com/u/67840180?v=4" width="50px" border-radius="50%" />  | <img src="https://avatars.githubusercontent.com/u/94784559?v=4" width="50px" border-radius="50%" />  | <img src="https://avatars.githubusercontent.com/u/8527882?v=4" width="50px" border-radius="50%" /> |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
