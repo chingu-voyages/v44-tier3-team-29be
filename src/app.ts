@@ -1,12 +1,13 @@
 import express, {Request, Response} from 'express'
 import { errorHandler, errorNotFoundHandler } from './middlewares/errorHandler'
 import DB from './libs/DB';
+import { config } from 'dotenv';
 
 //body parser
 import { json } from 'body-parser';
 
 //dotenv
-const denv = require('dotenv').config(); 
+const denv = config()
 
 //initiate DB
 const mDB = DB
