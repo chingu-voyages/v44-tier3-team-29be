@@ -156,7 +156,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Ha Anna - [@twitter_handle](https://twitter.com/haanna_dev) - anna@haanna.com
+Ha Anna - [@haanna_dev](https://twitter.com/haanna_dev) - anna@haanna.com
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email.com
 
