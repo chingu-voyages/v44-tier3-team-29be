@@ -1,4 +1,5 @@
 <a name="readme-top"></a>
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -51,10 +52,10 @@
 <br />
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-
 
 Artemis is a full-stack web application built using MERN (MongoDB, Express.js, React.js, Node.js), Next.js, and TypeScript. The aim of this project is to provide assistance to stray animals in the user's area.
 
@@ -67,34 +68,39 @@ This project came into existence during [Chingu's](https://www.chingu.io/) 44th 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
+
 <br />
 
-Frontend: 
-  - Next.js
-  - TypeScript
-  - TailwindCSS
+Frontend:
+
+- Next.js
+- TypeScript
+- TailwindCSS
 
 Backend:
+
 - Node.js
 - Express.js
 - TypeScript
 
 Database:
-- MongoDB
 
+- MongoDB
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- DEVELOPERS -->
+
 ### Developers
 
-| [Anna](https://github.com/ha-anna) | [Devim](https://github.com/devimalka) | [Horus](https://github.com/horus2121) | [Lei](https://github.com/leixdd)  |
-|------|-------|-------|------|
-| <img src="https://avatars.githubusercontent.com/u/83631167?v=4" width="50px" border-radius="50%" /> | <img src="https://avatars.githubusercontent.com/u/67840180?v=4" width="50px" border-radius="50%" />  | <img src="https://avatars.githubusercontent.com/u/94784559?v=4" width="50px" border-radius="50%" />  | <img src="https://avatars.githubusercontent.com/u/8527882?v=4" width="50px" border-radius="50%" /> |
+| [Anna](https://github.com/ha-anna)                                                                  | [Devim](https://github.com/devimalka)                                                               | [Horus](https://github.com/horus2121)                                                               | [Lei](https://github.com/leixdd)                                                                   |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| <img src="https://avatars.githubusercontent.com/u/83631167?v=4" width="50px" border-radius="50%" /> | <img src="https://avatars.githubusercontent.com/u/67840180?v=4" width="50px" border-radius="50%" /> | <img src="https://avatars.githubusercontent.com/u/94784559?v=4" width="50px" border-radius="50%" /> | <img src="https://avatars.githubusercontent.com/u/8527882?v=4" width="50px" border-radius="50%" /> |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
@@ -102,8 +108,9 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 To install Next.js on your machine you will need:
-* Node.js - Next.js requires Node.js version 10.13 or later. You can download and install Node.js from nodejs.org.
-* npm (Node Package Manager) - npm is distributed with Node.js, so once you have installed Node.js, you have also installed npm. You can check your npm version by running `npm -v` in your terminal.
+
+- Node.js - Next.js requires Node.js version 10.13 or later. You can download and install Node.js from nodejs.org.
+- npm (Node Package Manager) - npm is distributed with Node.js, so once you have installed Node.js, you have also installed npm. You can check your npm version by running `npm -v` in your terminal.
 
 ### Installation
 
@@ -116,20 +123,18 @@ To install Next.js on your machine you will need:
    npm install
    ```
 3. Start the development server
-    ```
-    npm run dev
-    ```
+   ```
+   npm run dev
+   ```
 4. To view your application go to
-    ```
-    http://localhost:3000
-    ```
-
+   ```
+   http://localhost:3000
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
 - [ ] User registration and authentication for secure access to the platform
@@ -145,20 +150,20 @@ See the [open issues](https://github.com/chingu-voyages/v44-tier3-team-29/issues
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Ha Anna - [@haanna_dev](https://twitter.com/haanna_dev) - anna@haanna.com
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email.com
+Horus H. - [@nubi_vago](https://twitter.com/nubi_vago) - h.horace0921@gmail.com
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email.com
 
@@ -168,12 +173,10 @@ Project Link: [https://github.com/chingu-voyages/v44-tier3-team-29](https://gith
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
-* [Chingu.io](https://www.chingu.io/)
+- [Chingu.io](https://www.chingu.io/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
