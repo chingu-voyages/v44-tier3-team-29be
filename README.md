@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/chingu-voyages/v44-tier3-team-29">
-    <img src="artemis-icon.png" alt="Logo" width="80" height="80">
+    <img src="./public/artemis-icon.png" alt="Logo" width="80" height="80">
   </a>
 
 <h1 align="center">Artemis</h1>
