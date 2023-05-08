@@ -93,9 +93,9 @@ Database:
 
 ### Developers
 
-| [Anna](https://github.com/ha-anna) | [Devim](https://github.com/devimalka) | [Horus](https://github.com/horus2121) | [Lei](https://github.com/leixdd)  | [Yutoun](https://github.com/yutounun)  |
-|------|-------|-------|------|------|
-| <img src="https://avatars.githubusercontent.com/u/83631167?v=4" width="50px" border-radius="50%" /> | <img src="https://avatars.githubusercontent.com/u/67840180?v=4" width="50px" border-radius="50%" />  | <img src="https://avatars.githubusercontent.com/u/94784559?v=4" width="50px" border-radius="50%" />  | <img src="https://avatars.githubusercontent.com/u/8527882?v=4" width="50px" border-radius="50%" /> | <img src="https://avatars.githubusercontent.com/u/96335290?v=4" width="50px" border-radius="50%" /> |
+| [Anna](https://github.com/ha-anna) | [Devim](https://github.com/devimalka) | [Horus](https://github.com/horus2121) | [Lei](https://github.com/leixdd)  |
+|------|-------|-------|------|
+| <img src="https://avatars.githubusercontent.com/u/83631167?v=4" width="50px" border-radius="50%" /> | <img src="https://avatars.githubusercontent.com/u/67840180?v=4" width="50px" border-radius="50%" />  | <img src="https://avatars.githubusercontent.com/u/94784559?v=4" width="50px" border-radius="50%" />  | <img src="https://avatars.githubusercontent.com/u/8527882?v=4" width="50px" border-radius="50%" /> |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -167,9 +167,7 @@ Devim - [@d3v1m](https://twitter.com/d3v1m) - developerimalka@gmail.com
 
 Horus H. - [@nubi_vago](https://twitter.com/nubi_vago) - h.horace0921@gmail.com
 
-Lei - [@twitter_handle](https://twitter.com/twitter_handle) - email@email.com
-
-Yuto Ichihara  - [@love_nz_from_jp](https://twitter.com/love_nz_from_jp) - email@email.com
+Lei - [@twitter_handle](https://twitter.com/twitter_handle)
 
 Project Link: [https://github.com/chingu-voyages/v44-tier3-team-29](https://github.com/chingu-voyages/v44-tier3-team-29)
 
