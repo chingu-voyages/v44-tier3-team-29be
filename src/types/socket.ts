@@ -1,9 +1,6 @@
 export interface IServerToClientEvents {
-  noArg: () => void
-  basicEmit: (a: number, b: string, c: Buffer) => void
-  withAck: (d: string, callback: (e: number) => void) => void
-  sendMessage: (a: string, b?: object) => void
-  notify: (a: string) => void
+  user_connected: (payload: TSocketPayload) => void
+  user_disconnected: (payload: TSocketPayload) => void
 }
 
 export interface IClientToServerEvents {
@@ -18,3 +15,11 @@ export interface ISocketData {
   name: string
   age: number
 }
+
+export interface ISocketPool {
+  [userId: string]: string
+}
+
+export type TSocketPayload = string | string[]
+
+export type TEmitEvent = keyof IServerToClientEvents
