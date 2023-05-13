@@ -71,6 +71,16 @@ export const initIOServer = (server: Server) => {
         sendMessage('user_disconnected', Object.values(socketPool), socket.id)
       }
     })
+
+    socket.on('system_message', (message: string) => {
+      console.info('System message from', socket.id, message)
+
+      sendMessage(
+        'system_message',
+        Object.values(socketPool).filter((id) => id !== socket.id) as string[],
+        message
+      )
+    })
   }
 
   const getUid = (id: string) =>
@@ -92,6 +102,11 @@ export const initIOServer = (server: Server) => {
       case 'user_disconnected':
         userSockets.forEach((id) => {
           io.to(id).emit('user_disconnected', payload)
+        })
+        break
+      case 'system_message':
+        userSockets.forEach((id) => {
+          io.to(id).emit('system_message', payload as string)
         })
         break
       default:
