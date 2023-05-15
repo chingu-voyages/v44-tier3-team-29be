@@ -3,9 +3,10 @@ import * as path from 'path'
 
 import { errorHandler, errorNotFoundHandler } from './middlewares/errorHandler'
 
-import { DB } from './library/db'
+import db from './library/db'
 
-const mdb = DB
+// db connection
+const mdb = db
 
 // Routes
 import { router } from './routes/index'
