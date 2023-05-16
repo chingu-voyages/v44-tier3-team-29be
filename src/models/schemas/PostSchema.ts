@@ -4,8 +4,8 @@ interface IPost {
   title: string
   description: string
   created_at: Date
-  //created_by?: string;
-  //location: srting
+  //created_by?: string
+  //location: string
 }
 
 const PostSchema: Schema = new Schema({
