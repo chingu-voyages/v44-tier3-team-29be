@@ -1,7 +1,7 @@
 import { configs } from '../config/config'
 import mongoose from 'mongoose'
 
-/* Connecto to Mongo */
+/* Connect to Mongo */
 const db = mongoose
   .connect(configs.mongo.url, { retryWrites: true, w: 'majority' })
   .then(() => {
