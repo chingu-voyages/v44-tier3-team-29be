@@ -72,8 +72,15 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
     if (!hashed_password) throw new Error('Error while hashing password')
 
     //check if there is identical email
+    const data = await UserModel.find({email})
+    if(data.length > 0) {
+        res.status(400).json({
+            message: "E-mail address is already been used",
+            status: false
+        })
+        return
+    }
     
-
     //save to db
     await UserModel.create({
         email, password: hashed_password
@@ -82,6 +89,7 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
             message: "Something went wrong",
             success: false
         })
+        return
     })
 
 
@@ -95,6 +103,9 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
 export const loginUser = async (req: Request, res: Response): Promise<void> => {
     
     const {email, password} = req.body;
+
+    //jwt
+    
 
 
 }
