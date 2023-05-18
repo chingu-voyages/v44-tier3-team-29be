@@ -3,13 +3,16 @@ import { Post } from '../models/schemas/PostSchema'
 
 //create post
 const createPost = (req: Request, res: Response, nex: NextFunction) => {
-  const { title, description } = req.body
-  const created_at = Date.now()
+  const { title, location, short_description, tags, image, long_description } =
+    req.body
 
   const post = new Post({
     title,
-    description,
-    created_at
+    location,
+    short_description,
+    tags,
+    image,
+    long_description
   })
 
   return post
