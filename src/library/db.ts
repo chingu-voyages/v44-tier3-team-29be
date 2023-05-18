@@ -1,29 +1,17 @@
 import { configs } from '../config/config'
 import mongoose from 'mongoose'
 
-/* Connect to Mongo */
-const db = mongoose
-  .connect(configs.mongo.url, { retryWrites: true, w: 'majority' })
-  .then(() => {
-    console.log('connected')
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+class DbConnection {
+  private static connection: mongoose.Connection
 
-export default db
-// connect to db
-// class DB {
-//   private static instance: mongoose.Connection
+  public static connect(): mongoose.Connection {
+    if (!DbConnection.connection) {
+      this.connection = mongoose.createConnection(configs.mongo.url)
+      console.log('Connected To Database!')
+    }
 
-//   public static connect(): mongoose.Connection {
-//     if (!DB.instance) {
-//       DB.instance = mongoose.createConnection(configs.mongo.url)
-//       console.log('DB connected')
-//     }
+    return DbConnection.connection
+  }
+}
 
-//     return DB.instance
-//   }
-// }
-
-// export default DB.connect().useDb(configs.mongo.db)
+export default DbConnection

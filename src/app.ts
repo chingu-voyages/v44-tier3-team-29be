@@ -3,10 +3,16 @@ import * as path from 'path'
 
 import { errorHandler, errorNotFoundHandler } from './middlewares/errorHandler'
 
-import db from './library/db'
+import DbConnection from './library/db'
 
-// db connection
-const mdb = db
+// connection to database
+const connection = DbConnection.connect()
+connection.on('connection', () => {
+  console.log('connection on')
+})
+connection.on('error', (error) => {
+  console.log('Error in DB ' + error)
+})
 
 // Routes
 import { router } from './routes/index'
