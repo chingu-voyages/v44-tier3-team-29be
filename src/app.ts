@@ -16,7 +16,6 @@ connection.on('error', (error) => {
 
 // Routes
 import { router } from './routes/index'
-import postRouter from './routes/Post'
 // Create Express server
 export const app = express()
 
@@ -28,9 +27,6 @@ app.set('port', process.env.PORT || 3000)
 
 app.use(express.static(path.join(__dirname, '../public')))
 app.use('/', router)
-
-// Post routes
-app.use('/post', postRouter)
 
 app.use(errorNotFoundHandler)
 app.use(errorHandler)
