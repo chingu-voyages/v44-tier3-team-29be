@@ -17,21 +17,21 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
         return;
     }
 
-    const passwordRequred = validate("Password", RULES.REQUIRED, {
+    const passwordRequired = validate("Password", RULES.REQUIRED, {
         value: password
     })
 
-    if(!passwordRequred.success) {
-        res.status(400).json(passwordRequred)
+    if(!passwordRequired.success) {
+        res.status(400).json(passwordRequired)
         return;
     }
 
-    const confirmPasswordRequred = validate("Confirm Password", RULES.REQUIRED, {
+    const confirmPasswordRequired = validate("Confirm Password", RULES.REQUIRED, {
         value: confirm_password
     })
 
-    if(!confirmPasswordRequred.success) {
-        res.status(400).json(confirmPasswordRequred)
+    if(!confirmPasswordRequired.success) {
+        res.status(400).json(confirmPasswordRequired)
         return;
     }
 
