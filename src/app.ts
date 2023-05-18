@@ -1,10 +1,10 @@
-import express, {Request, Response} from 'express'
+import express, { Request, Response } from 'express'
 import { errorHandler, errorNotFoundHandler } from './middlewares/errorHandler'
-import DB from './libs/DB';
-import { config } from 'dotenv';
+import DB from './libs/DB'
+import { config } from 'dotenv'
 
 //body parser
-import { json } from 'body-parser';
+import { json } from 'body-parser'
 
 //dotenv
 const denv = config()
@@ -27,9 +27,6 @@ app.use(json())
 //Set API Route
 app.use('/api', router)
 
-
 //error handler should handle the 400 errors and 500 errors
 app.use(errorNotFoundHandler)
 app.use(errorHandler)
-
-

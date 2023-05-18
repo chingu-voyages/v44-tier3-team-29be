@@ -9,7 +9,6 @@ export const router = Router()
 // /api/  -> default route
 router.get('/', controller.index)
 
-
 //  /api/auth -> auth route
 router.post('/auth/register', registerUser)
 router.post('/auth/login', loginUser)
