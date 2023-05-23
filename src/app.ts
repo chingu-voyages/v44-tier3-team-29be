@@ -3,6 +3,9 @@ import { errorHandler, errorNotFoundHandler } from './middlewares/errorHandler'
 import DB from './libs/DB'
 import { config } from 'dotenv'
 
+// Routes
+import { router } from './routes/index'
+
 //body parser
 import { json } from 'body-parser'
 
@@ -12,8 +15,6 @@ const denv = config()
 //initiate DB
 const mDB = DB
 
-// Routes
-import { router } from './routes/index'
 
 // Create Express server
 export const app = express()
