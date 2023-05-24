@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  
+  nodejs-artemis:
+    container_name: "artemis-api"
+    image: node:16-buster-slim
+    restart: always
+    working_dir: /api
+    volumes:
+      - ./:/api
+    command: bash -c "npm run build && npm run start"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - 8888:3000
+  
+networks:
+  artemis-network:
+    external: true
