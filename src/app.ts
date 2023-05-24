@@ -15,7 +15,6 @@ const denv = config()
 //initiate DB
 const mDB = DB
 
-
 // Create Express server
 export const app = express()
 

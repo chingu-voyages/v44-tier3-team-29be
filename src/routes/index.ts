@@ -6,9 +6,13 @@ import { registerUser, loginUser } from '../controllers/auth'
 
 //passport
 import passport from '../libs/Passport'
-const passportMiddleware = (req: Request, res: Response, next: NextFunction) => {
-    passport.authenticate('jwt', { session: false })(req, res, next);
-};
+const passportMiddleware = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  passport.authenticate('jwt', { session: false })(req, res, next)
+}
 
 export const router = Router()
 
@@ -19,12 +23,11 @@ router.get('/', controller.index)
 router.post('/auth/register', registerUser)
 router.post('/auth/login', loginUser)
 
-
 //authenticated routes
-router.get("/getAllPosts", passportMiddleware, (req, res) => {
-    //test return
-    return res.status(200).json({
-        message: "validated",
-        success: true
-    })
+router.get('/getAllPosts', passportMiddleware, (req, res) => {
+  //test return
+  return res.status(200).json({
+    message: 'validated',
+    success: true
+  })
 })

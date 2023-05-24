@@ -4,7 +4,7 @@ import { hash, compare } from 'bcrypt'
 import { validate } from '../libs/Validation'
 import { RULES } from '../libs/Rules'
 import { IUser } from '@/models/contracts/IUser'
-import { sign } from "jsonwebtoken"
+import { sign } from 'jsonwebtoken'
 import { config } from 'dotenv'
 const denv = config()
 
@@ -111,7 +111,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
 
   //check if account is existing
 
-  const data : IUser|null = await UserModel.findOne({ email })
+  const data: IUser | null = await UserModel.findOne({ email })
   if (!data) {
     res.status(400).json({
       message: 'Account does not exists',
@@ -123,8 +123,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
   const user = data
 
   //check if password is correct
-  const isPasswordValid = await compare(password, user.password)  
-
+  const isPasswordValid = await compare(password, user.password)
 
   if (!isPasswordValid) {
     res.status(400).json({
@@ -133,12 +132,15 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
     })
     return
   }
-  
+
   //generate a jwt token for authentication
-  const token = sign({ id: user.id }, (process.env.PASSPORT_ACCESS_KEY ?? "noSecret"))
+  const token = sign(
+    { id: user.id },
+    process.env.PASSPORT_ACCESS_KEY ?? 'noSecret'
+  )
 
   res.status(200).json({
-    message: {token, id: user.id},
+    message: { token, id: user.id },
     success: true
   })
 }
