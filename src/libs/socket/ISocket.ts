@@ -4,14 +4,6 @@ export interface IServerToClientEvents {
   system_message: (payload: string) => void
 }
 
-export interface IClientToServerEvents {
-  hello: () => void
-}
-
-export interface IInterServerEvents {
-  ping: () => void
-}
-
 export interface ISocketData {
   name: string
   age: number

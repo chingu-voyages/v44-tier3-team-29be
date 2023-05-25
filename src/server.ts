@@ -1,12 +1,12 @@
 import { app } from './app'
-import { initIOServer } from './utils/socket'
+import { startIOServer } from './libs/socket/socket'
 
 const port = app.get('port')
 
 const server = app.listen(port, onListening)
 server.on('error', onError)
 
-initIOServer(server)
+startIOServer(server)
 
 function onError(error: NodeJS.ErrnoException) {
   if (error.syscall !== 'listen') {
