@@ -13,23 +13,27 @@ export const sendMessage = (
 ) => {
   console.info('Emmitting event>>>' + eventName + ' to ', targetSockets)
 
-  switch (eventName) {
-    case 'user_connected':
-      targetSockets.forEach((id) => {
-        io.to(id).emit('user_connected', payload)
-      })
-      break
-    case 'user_disconnected':
-      targetSockets.forEach((id) => {
-        io.to(id).emit('user_disconnected', payload)
-      })
-      break
-    case 'system_message':
-      targetSockets.forEach((id) => {
-        io.to(id).emit('system_message', payload as string)
-      })
-      break
-    default:
-      return
-  }
+  targetSockets.forEach((id) => {
+    io.to(id).emit(eventName, payload)
+  })
+
+  //   switch (eventName) {
+  //     case 'user_connected':
+  //       targetSockets.forEach((id) => {
+  //         io.to(id).emit('user_connected', payload)
+  //       })
+  //       break
+  //     case 'user_disconnected':
+  //       targetSockets.forEach((id) => {
+  //         io.to(id).emit('user_disconnected', payload)
+  //       })
+  //       break
+  //     case 'system_message':
+  //       targetSockets.forEach((id) => {
+  //         io.to(id).emit('system_message', payload)
+  //       })
+  //       break
+  //     default:
+  //       return
+  //   }
 }

@@ -20,7 +20,13 @@ export const connectionHanlder = (io: IOServer, socket: Socket) => {
       }
     }
 
-    const uid = v4()
+    const uid = socket.handshake.auth.uid
+    if (!uid) {
+      sendMessage(io, 'system_message', [socket.id], 'Please sign in...')
+      socket.disconnect()
+      return
+    }
+    // const uid = v4()
     socketPool[uid] = socket.id
 
     console.info('Sending callback for handshake...')
