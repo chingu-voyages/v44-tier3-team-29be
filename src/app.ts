@@ -15,12 +15,11 @@ const denv = config()
 //initiate DB
 const mDB = DB
 
-
 // Create Express server
 export const app = express()
 
 // Express configuration
-app.set('port', process.env.PORT || 3000)
+app.set('port', process.env.PORT || 8000)
 
 //set body parser
 app.use(json())
