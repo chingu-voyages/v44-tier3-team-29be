@@ -12,7 +12,7 @@ export const registerUser = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const { email, password, confirm_password } = req.body
+  const { email, password, username, confirm_password } = req.body
 
   //validation
   const emailRequired = validate('E-mail Address', RULES.REQUIRED, {
@@ -20,6 +20,15 @@ export const registerUser = async (
   })
 
   if (!emailRequired.success) {
+    res.status(400).json(emailRequired)
+    return
+  }
+
+  const usernameRequired = validate('Username', RULES.REQUIRED, {
+    value: email
+  })
+
+  if (!usernameRequired.success) {
     res.status(400).json(emailRequired)
     return
   }
@@ -78,11 +87,21 @@ export const registerUser = async (
   if (!hashed_password) throw new Error('Error while hashing password')
 
   //check if there is identical email
-  const data = await UserModel.find({ email })
-  if (data.length > 0) {
+  const emailCheck = await UserModel.find({ email })
+  if (emailCheck.length > 0) {
     res.status(400).json({
       message: 'E-mail address is already been used',
-      status: false
+      success: false
+    })
+    return
+  }
+
+  //check if there is identical username
+  const usernameCheck = await UserModel.find({ username })
+  if (usernameCheck.length > 0) {
+    res.status(400).json({
+      message: 'Username is already been used',
+      success: false
     })
     return
   }
@@ -115,7 +134,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
   if (!data) {
     res.status(400).json({
       message: 'Account does not exists',
-      status: false
+      success: false
     })
     return
   }
@@ -128,7 +147,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
   if (!isPasswordValid) {
     res.status(400).json({
       message: 'username or password is incorrect.',
-      status: false
+      success: false
     })
     return
   }
