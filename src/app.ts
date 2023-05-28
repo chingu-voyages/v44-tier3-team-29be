@@ -8,6 +8,7 @@ import { router } from './routes/index'
 
 //body parser
 import { json } from 'body-parser'
+import cors, { CorsOptions } from 'cors'
 
 //dotenv
 const denv = config()
@@ -17,6 +18,17 @@ const mDB = DB
 
 // Create Express server
 export const app = express()
+
+// enable cors
+const corsOptions: CorsOptions = {
+  origin:
+    process.env.NODE_ENV === 'production'
+      ? process.env.CLIENT_URL
+      : 'http://localhost:3000',
+  credentials: true,
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions))
 
 // Express configuration
 app.set('port', process.env.PORT || 8000)
