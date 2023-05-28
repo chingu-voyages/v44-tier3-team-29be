@@ -160,7 +160,10 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
   )
 
   res.status(200).json({
-    message: { token, id: user.id },
+    message: {
+      token,
+      user: { username: user.username, uid: user._id, email: user.email }
+    },
     success: true
   })
 }
