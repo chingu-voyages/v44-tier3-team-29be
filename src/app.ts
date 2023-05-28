@@ -1,7 +1,7 @@
-import express from 'express'
-import * as path from 'path'
-
+import express, { Request, Response } from 'express'
 import { errorHandler, errorNotFoundHandler } from './middlewares/errorHandler'
+import DB from './libs/DB'
+import { config } from 'dotenv'
 
 import DbConnection from './library/db'
 
@@ -16,6 +16,16 @@ connection.on('error', (error) => {
 
 // Routes
 import { router } from './routes/index'
+
+//body parser
+import { json } from 'body-parser'
+
+//dotenv
+const denv = config()
+
+//initiate DB
+const mDB = DB
+
 // Create Express server
 export const app = express()
 
@@ -23,10 +33,14 @@ export const app = express()
 app.use(express.json())
 
 // Express configuration
-app.set('port', process.env.PORT || 3000)
+app.set('port', process.env.PORT || 8000)
 
-app.use(express.static(path.join(__dirname, '../public')))
-app.use('/', router)
+//set body parser
+app.use(json())
 
+//Set API Route
+app.use('/api', router)
+
+//error handler should handle the 400 errors and 500 errors
 app.use(errorNotFoundHandler)
 app.use(errorHandler)
