@@ -20,7 +20,7 @@ export const validatePasswordLength = (
   params: IValidationParameter
 ): boolean => {
   const min = params.min || 0
-  return params.value.length > Number(min)
+  return params.value.length >= Number(min)
 }
 
 export const validateIdentical = (params: IValidationParameter): boolean => {
