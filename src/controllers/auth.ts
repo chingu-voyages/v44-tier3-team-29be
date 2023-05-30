@@ -25,11 +25,11 @@ export const registerUser = async (
   }
 
   const usernameRequired = validate('Username', RULES.REQUIRED, {
-    value: email
+    value: username
   })
 
   if (!usernameRequired.success) {
-    res.status(400).json(emailRequired)
+    res.status(400).json(usernameRequired)
     return
   }
 
@@ -108,11 +108,12 @@ export const registerUser = async (
 
   //save to db
   await UserModel.create({
+    username,
     email,
     password: hashed_password
   }).catch((err) => {
     res.status(500).json({
-      message: 'Something went wrong',
+      message: err.message,
       success: false
     })
     return
@@ -159,7 +160,10 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
   )
 
   res.status(200).json({
-    message: { token, id: user.id },
+    message: {
+      token,
+      user: { username: user.username, uid: user._id, email: user.email }
+    },
     success: true
   })
 }
