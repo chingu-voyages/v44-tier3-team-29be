@@ -1,7 +1,5 @@
 import { Schema } from 'mongoose'
-import DbConnection from '../../library/db'
-
-const conn = DbConnection.connect()
+import DB from '../../libs/DB'
 
 interface IPost {
   title: string
@@ -23,4 +21,4 @@ const PostSchema: Schema = new Schema({
 
 PostSchema.set('timestamps', true)
 
-export const Post = conn.model<IPost>('Post', PostSchema)
+export const Post = DB.model<IPost>('Post', PostSchema)

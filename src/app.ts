@@ -1,18 +1,7 @@
-import express, { Request, Response } from 'express'
+import express from 'express'
 import { errorHandler, errorNotFoundHandler } from './middlewares/errorHandler'
 import DB from './libs/DB'
 import { config } from 'dotenv'
-
-import DbConnection from './library/db'
-
-// connection to database
-const connection = DbConnection.connect()
-connection.on('connection', () => {
-  console.log('connection on')
-})
-connection.on('error', (error) => {
-  console.log('Error in DB ' + error)
-})
 
 // Routes
 import { router } from './routes/index'
@@ -30,7 +19,6 @@ const mDB = DB
 // Create Express server
 export const app = express()
 
-// need to use express.json to parse the json data from request
 // enable cors
 const corsOptions: CorsOptions = {
   origin:
