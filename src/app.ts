@@ -11,10 +11,10 @@ import { json } from 'body-parser'
 import cors, { CorsOptions } from 'cors'
 
 //dotenv
-const denv = config()
+config()
 
 //initiate DB
-const mDB = DB
+DB
 
 // Create Express server
 export const app = express()

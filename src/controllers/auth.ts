@@ -1,12 +1,10 @@
 import { Request, Response } from 'express'
-import { UserModel, UserInfoModel } from '../models/UserSchema'
+import { UserModel } from '../models/UserSchema'
 import { hash, compare } from 'bcrypt'
 import { validate } from '../libs/Validation'
 import { RULES } from '../libs/Rules'
 import { IUser } from '@/models/contracts/IUser'
 import { sign } from 'jsonwebtoken'
-import { config } from 'dotenv'
-const denv = config()
 
 export const registerUser = async (
   req: Request,
