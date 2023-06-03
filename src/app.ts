@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express'
+import express from 'express'
 import { errorHandler, errorNotFoundHandler } from './middlewares/errorHandler'
 import DB from './libs/DB'
 import { config } from 'dotenv'
@@ -11,10 +11,10 @@ import { json } from 'body-parser'
 import cors, { CorsOptions } from 'cors'
 
 //dotenv
-const denv = config()
+config()
 
 //initiate DB
-const mDB = DB
+DB
 
 // Create Express server
 export const app = express()

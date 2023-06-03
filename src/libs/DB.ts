@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import { config } from 'dotenv'
-const denv = config()
+config()
 
 const dbName = process.env.MONGODB_DBNAME || 'artemis'
 const dbUser = process.env.MONGODB_USER || 'root'
