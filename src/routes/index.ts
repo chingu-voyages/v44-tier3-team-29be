@@ -21,7 +21,7 @@ export const router = Router()
 router.get('/', controller.index)
 
 // Post routes
-router.use('/post', passportMiddleware, postRouter)
+router.use('/posts', passportMiddleware, postRouter)
 //  /api/auth -> auth route
 router.post('/auth/register', registerUser)
 router.post('/auth/login', loginUser)

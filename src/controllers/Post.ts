@@ -4,29 +4,30 @@ import { Post } from '../models/schemas/PostSchema'
 //create post
 const createPost = async (req: Request, res: Response, nex: NextFunction) => {
   try {
-    const {
-      title,
-      location,
-      short_description,
-      tags,
-      image,
-      long_description
-    } = req.body
+    const { title, location, shDesc, tags, image, lgDesc } = req.body
 
     const post = new Post({
       title,
       location,
-      short_description,
+      shDesc,
       tags,
       image,
-      long_description
+      lgDesc
     })
 
     const savedPost = await post.save()
 
-    return res.status(201).json({ savedPost })
+    return res.status(200).json({
+      message: {
+        post: savedPost
+      },
+      success: true
+    })
   } catch (error) {
-    return res.status(500).json({ error })
+    return res.status(500).json({
+      message: error,
+      success: false
+    })
   }
 }
 
@@ -38,12 +39,23 @@ const readPost = async (req: Request, res: Response, nex: NextFunction) => {
     const post = await Post.findById(postId)
 
     if (!post) {
-      return res.status(404).json({ error: 'Post Not found' })
+      return res.status(500).json({
+        message: 'Post does not exist.',
+        success: false
+      })
     }
 
-    return res.json({ post })
+    return res.status(200).json({
+      message: {
+        post: post
+      },
+      success: true
+    })
   } catch (error) {
-    return nex(error)
+    return res.status(500).json({
+      message: error,
+      success: false
+    })
   }
 }
 
@@ -51,9 +63,18 @@ const readPost = async (req: Request, res: Response, nex: NextFunction) => {
 const readAll = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const posts = await Post.find()
-    return res.status(200).json({ posts })
+
+    return res.status(200).json({
+      message: {
+        posts: posts
+      },
+      success: true
+    })
   } catch (error) {
-    return res.status(500).json({ error })
+    return res.status(500).json({
+      message: error,
+      success: false
+    })
   }
 }
 
@@ -69,12 +90,23 @@ const updatePost = async (req: Request, res: Response, nex: NextFunction) => {
 
       const updatedPost = await post.save()
 
-      return res.status(201).json({ post: updatedPost })
+      return res.status(200).json({
+        message: {
+          post: updatedPost
+        },
+        success: true
+      })
     } else {
-      return res.status(404).json({ message: 'Not found' })
+      return res.status(500).json({
+        message: 'Post does not exist.',
+        success: false
+      })
     }
   } catch (error) {
-    return res.status(500).json({ error })
+    return res.status(500).json({
+      message: error,
+      success: false
+    })
   }
 }
 
@@ -86,12 +118,23 @@ const deletePost = async (req: Request, res: Response, nex: NextFunction) => {
     const deletedPost = await Post.findByIdAndDelete(postId)
 
     if (deletedPost) {
-      return res.status(201).json({ post: deletedPost, message: 'Deleted' })
+      return res.status(200).json({
+        message: {
+          post: deletePost
+        },
+        success: true
+      })
     } else {
-      return res.status(404).json({ message: 'Not found' })
+      return res.status(500).json({
+        message: 'Post does not exist.',
+        success: false
+      })
     }
   } catch (error) {
-    return res.status(500).json({ error })
+    return res.status(500).json({
+      message: error,
+      success: false
+    })
   }
 }
 

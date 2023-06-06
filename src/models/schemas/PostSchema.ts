@@ -13,10 +13,10 @@ interface IPost {
 const PostSchema: Schema = new Schema({
   title: { type: String, required: true },
   location: { type: String, required: true },
-  short_description: { type: String, required: true },
+  shDesc: { type: String, required: true },
   tags: [{ type: String, required: true }],
-  image: { type: String, required: true },
-  long_description: { type: String, required: true }
+  image: { type: String, required: false },
+  lgDesc: { type: String, required: false }
 })
 
 PostSchema.set('timestamps', true)
