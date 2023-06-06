@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response, Router } from 'express'
 import * as controller from '../controllers/index'
-import { postRouter } from './Post'
+import { postRouter } from './post'
 
 //authentication controller
 import { registerUser, loginUser } from '../controllers/auth'

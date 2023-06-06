@@ -138,4 +138,10 @@ const deletePost = async (req: Request, res: Response, nex: NextFunction) => {
   }
 }
 
-export default { createPost, readPost, updatePost, deletePost, readAll }
+export const postControllers = {
+  createPost,
+  readPost,
+  updatePost,
+  deletePost,
+  readAll
+}
