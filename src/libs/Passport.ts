@@ -3,6 +3,7 @@ import passportJWT, { StrategyOptions } from 'passport-jwt'
 import { UserModel } from '../models/UserSchema'
 import { IUser } from '../models/contracts/IUser'
 import { config } from 'dotenv'
+import { Request, Response, NextFunction } from 'express'
 
 const jwtOptions: StrategyOptions = {
   jwtFromRequest: passportJWT.ExtractJwt.fromAuthHeaderAsBearerToken(),
@@ -21,3 +22,11 @@ passport.use(
 )
 
 export default passport
+
+export const passportMiddleware = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  passport.authenticate('jwt', { session: false })(req, res, next)
+}
