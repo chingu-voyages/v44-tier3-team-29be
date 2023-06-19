@@ -60,7 +60,11 @@ const readPost = async (req: Request, res: Response, nex: NextFunction) => {
 }
 
 // get all posts
-const readAll = async (req: Request, res: Response, next: NextFunction) => {
+const readAllPosts = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const posts = await Post.find()
 
@@ -143,5 +147,5 @@ export const postControllers = {
   readPost,
   updatePost,
   deletePost,
-  readAll
+  readAllPosts
 }
